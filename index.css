@@ -1,0 +1,355 @@
+@font-face {
+    font-family: Italiana;
+    src: url('./content/Italiana-Regular.ttf');
+}
+@font-face {
+    font-family: Figtree;
+    src: url('./content/Figtree-VariableFont_wght.ttf');
+}
+body {
+    margin: 0;
+    font-family: Italiana;
+    background-color: #e4e2dd;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+body.hide-scrollbar::-webkit-scrollbar-thumb,  
+body.hide-scrollbar::-webkit-scrollbar-track
+{
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #afa383a8;
+    border: 0px none #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #beb293;
+    border: 0px none #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #5e594a;
+  }
+  ::-webkit-scrollbar-track {
+    background: #d3d1ca;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #d3d1ca;
+
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #c4c1b5;
+
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+body.prevent-scroll::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+body.prevent-scroll {
+    overflow-y: hidden;
+}
+
+#content {
+    display: grid;
+    height: 100vh;
+}
+.section {
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.section.welcome {
+    grid-template-rows: min-content 1fr;
+}
+.welcome .hero {
+    width: max-content;
+    margin: 100px auto auto auto;
+    font-size: 5em;
+    color: #222;
+    text-align: center;
+    letter-spacing: 15px;
+
+    height: min-content;
+}
+.welcome .hero .title div {
+    display: inline-block;
+    opacity: 0;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.welcome .hero .open {
+    animation: fadein 0.8s ease-out 0s forwards;
+}
+.welcome .hero .your {
+    animation: fadein 0.8s ease-out 1s forwards;
+}
+.welcome .hero .eyes {
+    animation: fadein 0.8s ease-out 2s forwards;
+}
+.welcome .hero .wakeup {
+    animation: fadein 0.8s ease-out 3s forwards;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+
+    margin: 0 0 0 0;
+    font-family: Figtree;
+    opacity: 0;
+}
+#eye {
+    margin: auto;
+    width: 400px;
+}
+#eye-svg {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.8, 0.01, 1, 1);
+}
+#eye-svg.show {
+    opacity: 1;
+}
+
+.load-left {
+    position: absolute;
+    bottom: 6vw;
+    left: 10vw;
+
+    font-size: 1.5rem;
+}
+.load-right {
+    position: absolute;
+    bottom: 5vw;
+    right: 8vw;
+    font-size: 1.7rem;
+}
+.load-wrap {
+    position: relative;
+}
+.load-text {
+    opacity: 0;
+    margin-bottom: 50px;
+    transition: opacity 0.8s ease;
+
+}
+@keyframes flashfade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.wait .arrows {
+    opacity: 0;
+}
+
+.arrows {
+    width: 60px;
+    height: 77px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 0px;
+
+    opacity: 1;
+    transition: opacity 0.8s ease;
+  }
+  
+  .arrows path {
+    stroke: #000000;
+    fill: transparent;
+    stroke-width: 3px;  
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a3 { 
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+  }
+
+
+.onboard {
+    width: 80%;
+    margin: 100px auto auto auto;
+    font-size: 5em;
+    color: rgb(100 100 100);
+    text-align: center;
+}
+.onboard span.overline {
+    font-family: Figtree;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.onboard span.hero {
+    color: rgb(0, 0, 0);
+}
+.onboard u {
+    text-decoration-thickness: 4px;
+}
+
+.slidebackground {
+    position: absolute;
+}
+.eye-cover-wrapper {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 194px);
+    display: grid;
+    padding-top: 194px;
+}
+
+.eye-cover {
+    margin: auto;
+    width: 510px;
+    height: 370px;
+    transition: opacity 1s cubic-bezier(0.28, 0.55, 0.39, 0.96);
+    opacity: 1;
+    background: radial-gradient(circle, rgba(228,226,221,1) 50%, rgba(0,0,0,0) 100%);
+}
+.eye-cover.hide {
+opacity: 0;
+}
+
+
+@keyframes slidersfadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+.sliders {
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+    width: 100vw;
+    overflow: hidden;
+    height: min-content;
+
+    z-index: -1;
+    opacity: 0;
+    animation: slidersfadein 4s linear 2s 1 forwards;
+}
+.sliders .row {
+    font-size: 10em;
+    height: 135px;
+    line-height: 140px;
+    white-space: nowrap;
+    letter-spacing: -5px;
+
+}
+@keyframes rowslide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(calc(100vw - 3620px));
+    }
+    
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes rowslidereverse {
+    0% {
+        transform: translateX(calc(100vw - 3620px));
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+    
+    100% {
+        transform: translateX(calc(100vw - 3620px));
+    }
+}
+.sliders .row:nth-child(1) {
+    margin-left: -0vw;
+    animation: 230s linear 0s infinite normal none running rowslide;
+}
+.sliders .row:nth-child(2) {
+    margin-left: -0vw;
+    animation: 203s linear 0s infinite normal none running rowslidereverse;
+}  
+.sliders .row:nth-child(3) {
+    margin-left: -0vw;
+    animation: 292s linear 0s infinite normal none running rowslide;
+}
+.sliders .row:nth-child(4) {
+    margin-left: -0vw;
+    animation: 251s linear 0s infinite normal none running rowslidereverse;
+}
+.sliders .row:nth-child(5) {
+    margin-left: -0vw;
+    animation: 215s linear 0s infinite normal none running rowslide;
+}
+.sliders .row:nth-child(6) {
+    margin-left: -0vw;
+    animation: 235s linear 0s infinite normal none running rowslide;
+}
+.sliders .row:nth-child(7) {
+    margin-left: -0vw;
+    animation: 282s linear 0s infinite normal none running rowslidereverse;
+}
+
