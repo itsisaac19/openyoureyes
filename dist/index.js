@@ -85,7 +85,7 @@ class TimingManager {
 }   
 
 const manager = new TimingManager();
-const skip = false;
+const skip = true;
 
 (() => {
     let text = document.querySelector('.welcome .your');
@@ -143,7 +143,9 @@ function disableScroll() {
   window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
-disableScroll()
+if (skip == false) {
+    disableScroll()
+}
 
 // call this to Enable
 function enableScroll() {
@@ -152,3 +154,22 @@ function enableScroll() {
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
+
+
+var animate = new Animate({        
+    target: '.semi-circle',
+    animatedClass: 'animated',
+    offset: [0, 0],
+    delay: 0,
+    remove: true,
+    scrolled: false,
+    reverse: true,
+    onLoad: false,
+    onScroll: true,
+    onResize: false,
+    disableFilter: false,
+    callbackOnInit: function() {},
+    callbackOnInView: function(el) {},
+    callbackOnAnimate: function(el) {},
+});
+animate.init();

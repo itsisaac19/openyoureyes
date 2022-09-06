@@ -245,6 +245,69 @@ body.prevent-scroll {
     text-decoration-thickness: 4px;
 }
 
+@keyframes gradientslideleft { 
+    0%{background-position: 100% 100%}
+    50% {background-position: 10% 10%}
+    100%{background-position: 100% 100%}
+}
+@keyframes semislidefromleft {
+    0% {transform: translate(-100%, -50%);}
+    100% {transform: translate(0%, -50%);}
+}
+@keyframes gradientslideright { 
+    0%{background-position: 10% 0%}
+    50% {background-position: 100% 100%}
+    100%{background-position: 10% 0%}
+}
+@keyframes semislidefromright {
+    0% {transform: translate(100%, -50%);}
+    100% {transform: translate(0%, -50%);}
+}
+.left-semi {
+    position: absolute;
+    top: 50%;
+    transform: translate(-99.9%, -50%);
+    left: 0;
+    width: 400px;
+    height: 800px;
+
+    background: linear-gradient(270deg, rgb(216, 208, 188) 0%, rgba(0,0,0,1) 100%);;
+    background-position: 100% 0%;
+    background-size: 200% 200%;
+    
+    border-radius: 0 800px 800px 0;
+}
+.left-semi.animated {
+    animation: gradientslideleft 8s linear 0s infinite forwards;
+    transform: translate(0%, -50%);
+}
+.left-semi.view-animate {
+    animation: semislidefromleft 3s ease 0s 1 forwards;
+}
+.right-semi {
+    position: absolute;
+    top: 50%;
+    transform: translate(100%, -50%);
+    right: 0px;
+    width: 400px;
+    height: 800px;
+
+    background: linear-gradient(90deg, rgb(216, 208, 188) 0%, rgba(0,0,0,1) 100%);;
+    background-position: 10% 0%;
+    background-size: 200% 200%;
+
+    border-radius: 800px 0 0 800px;
+}
+.right-semi.animated {
+    animation: gradientslideright 8s linear 0s infinite forwards;
+    transform: translate(0%, -50%);
+}
+.right-semi.view-animate {
+    animation: semislidefromright 3s ease 0s 1 forwards;
+}
+
+
+
 .slidebackground {
     position: absolute;
 }
@@ -259,10 +322,10 @@ body.prevent-scroll {
 .eye-cover {
     margin: auto;
     width: 510px;
-    height: 370px;
+    height: 380px;
     transition: opacity 1s cubic-bezier(0.28, 0.55, 0.39, 0.96);
     opacity: 1;
-    background: radial-gradient(circle, rgba(228,226,221,1) 50%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(circle, rgba(228,226,221,1) 30%, rgb(102 62 62 / 0%) 52%, rgb(0 0 0 / 0%) 100%);
 }
 .eye-cover.hide {
 opacity: 0;
@@ -353,3 +416,13 @@ opacity: 0;
     animation: 282s linear 0s infinite normal none running rowslidereverse;
 }
 
+.facts {
+    display: grid;
+}
+.facts .question {
+    margin: 0 auto;
+    font-family: Figtree;
+    font-size: 20px;
+    color: rgb(100 100 100);
+    letter-spacing: 5px;
+}

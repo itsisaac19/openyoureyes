@@ -1,0 +1,26 @@
+{
+  "name": "openyoureyes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "functions/server.js",
+  "scripts": {
+    "build": "netlify-lambda build express",
+    "start": "netlify-lambda serve express"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsisaac19/openyoureyes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsisaac19/openyoureyes/issues"
+  },
+  "homepage": "https://github.com/itsisaac19/openyoureyes#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.2"
+  }
+}
