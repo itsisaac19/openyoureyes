@@ -1,2 +1,4 @@
 node_modules
 content/devina-default.svg
+src/app.js
+webpack.config.js

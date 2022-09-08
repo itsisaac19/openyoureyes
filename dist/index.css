@@ -101,13 +101,13 @@ body.prevent-scroll {
     }
 }
 .welcome .hero .open {
-    animation: fadein 0.8s ease-out 0s forwards;
+    animation: fadein 0.8s ease-out 0.2s forwards;
 }
 .welcome .hero .your {
-    animation: fadein 0.8s ease-out 1s forwards;
+    animation: fadein 0.8s ease-out 0.4s forwards;
 }
 .welcome .hero .eyes {
-    animation: fadein 0.8s ease-out 2s forwards;
+    animation: fadein 0.8s ease-out 0.6s forwards;
 }
 .welcome .hero .wakeup {
     animation: fadein 0.8s ease-out 3s forwards;
@@ -130,7 +130,7 @@ body.prevent-scroll {
 }
 #eye-svg {
     opacity: 0;
-    transition: opacity 1s cubic-bezier(0.8, 0.01, 1, 1);
+    transition: opacity 0.2s cubic-bezier(0.8, 0.01, 1, 1);
 }
 #eye-svg.show {
     opacity: 1;
@@ -268,8 +268,9 @@ body.prevent-scroll {
     top: 50%;
     transform: translate(-99.9%, -50%);
     left: 0;
-    width: 400px;
-    height: 800px;
+
+    aspect-ratio: 1/2;
+    width: min(20%, 400px); 
 
     background: linear-gradient(270deg, rgb(216, 208, 188) 0%, rgba(0,0,0,1) 100%);;
     background-position: 100% 0%;
@@ -289,8 +290,9 @@ body.prevent-scroll {
     top: 50%;
     transform: translate(100%, -50%);
     right: 0px;
-    width: 400px;
-    height: 800px;
+
+    aspect-ratio: 1/2;
+    width: min(20%, 400px); 
 
     background: linear-gradient(90deg, rgb(216, 208, 188) 0%, rgba(0,0,0,1) 100%);;
     background-position: 10% 0%;
@@ -323,7 +325,7 @@ body.prevent-scroll {
     margin: auto;
     width: 510px;
     height: 380px;
-    transition: opacity 1s cubic-bezier(0.28, 0.55, 0.39, 0.96);
+    transition: opacity 0.2s cubic-bezier(0.28, 0.55, 0.39, 0.96);
     opacity: 1;
     background: radial-gradient(circle, rgba(228,226,221,1) 30%, rgb(102 62 62 / 0%) 52%, rgb(0 0 0 / 0%) 100%);
 }
