@@ -225,13 +225,26 @@ body.prevent-scroll {
     -webkit-animation-delay:0s; /* Safari 和 Chrome */
   }
 
-
+.onboard-section {
+    height: 110vh;
+}
 .onboard {
     width: 80%;
     margin: 100px auto auto auto;
     font-size: 5em;
     color: rgb(100 100 100);
     text-align: center;
+}
+
+@media screen and (max-height: 900px) {
+    .onboard {
+        font-size: 4em;
+    }
+}
+@media screen and (max-height: 600px) {
+    .onboard {
+        font-size: 3em;
+    }
 }
 .onboard span.overline {
     font-family: Figtree;
