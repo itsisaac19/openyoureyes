@@ -1,9 +1,11 @@
 @font-face {
     font-family: Italiana;
+    font-display: swap;
     src: url('./content/Italiana-Regular.ttf');
 }
 @font-face {
     font-family: Figtree;
+    font-display: swap;
     src: url('./content/Figtree-VariableFont_wght.ttf');
 }
 body {
@@ -433,11 +435,66 @@ opacity: 0;
 
 .facts {
     display: grid;
+    grid-template-rows: min-content;
+    height: max-content;
 }
 .facts .question {
-    margin: 0 auto;
+    margin: 100px auto 20px auto;
     font-family: Figtree;
     font-size: 20px;
     color: rgb(100 100 100);
     letter-spacing: 5px;
+}
+.facts .define-wrap {
+    font-size: 5em;
+    color: #333;
+    text-align: center;
+    margin: 0 0 100px 0;
+}
+
+.eye-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+.eyeball-wrap {
+    display: grid;
+    padding: 100px 0;
+}
+
+
+#normal-eye {
+    margin: 0 auto;
+    width: min(70%, 800px); 
+}
+#myopic-eye {
+    margin: 0 auto;
+    width: min(70%, 800px); 
+}
+#correct-eye {
+    margin: 0 auto;
+    width: min(70%, 800px); 
+}
+.eyeball-svg {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.eyeball-svg.x {
+    opacity: 1;
+}
+
+.eye-details {
+    margin: auto 20px auto 100px;
+}
+.eye-header {
+    margin: 20px;
+    font-size: 5em;
+    color: #333;
+}
+.eye-desc {
+    margin: 20px;
+    font-size: 20px;
+    color: #333;
+    font-family: Figtree;
+    line-height: 1.5em;
 }
